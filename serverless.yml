@@ -1,0 +1,33 @@
+component: http
+name: http-nestjs-Fxk8Z9Usqx
+inputs:
+  src:
+    dist: ./
+    hook: npm run build
+    exclude:
+      - .env
+    src: ./
+  faas:
+    runtime: Nodejs12.16
+    framework: nestjs
+    name: '${name}'
+    eip: true
+    timeout: 3
+    memorySize: 512
+    tags: []
+    environments: []
+    layers:
+      - name: '${output:${stage}:${app}:trtc-living-nest-api-layer.name}'
+        version: '${output:${stage}:${app}:trtc-living-nest-api-layer.version}'
+  apigw:
+    protocols:
+      - http
+      - https
+    timeout: 60
+    environment: release
+    customDomains: []
+  region: ap-shanghai
+  isAutoCiDeploy: false
+org: '1310267281'
+app: trtc-living-nest-api
+stage: dev
