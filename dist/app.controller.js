@@ -23,14 +23,14 @@ let AppController = class AppController {
     }
 };
 __decorate([
-    (0, common_1.Get)(),
-    (0, common_1.Render)('index'),
+    common_1.Get(),
+    common_1.Render('index'),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", void 0)
 ], AppController.prototype, "root", null);
 AppController = __decorate([
-    (0, common_1.Controller)(),
+    common_1.Controller(),
     __metadata("design:paramtypes", [app_service_1.AppService])
 ], AppController);
 exports.AppController = AppController;
